@@ -215,7 +215,8 @@ enum heif_suberror_code
 
   heif_suberror_No_av1C_box = 131,
 
-  heif_suberror_Wrong_tile_image_pixel_depth = 132,
+  // not present in 1.11.0:
+  // heif_suberror_Wrong_tile_image_pixel_depth = 132,
 
 
   // --- Memory_allocation_error ---
@@ -534,7 +535,8 @@ int heif_image_handle_get_height(const struct heif_image_handle* handle);
 int heif_image_handle_has_alpha_channel(const struct heif_image_handle*);
 
 //LIBHEIF_API
-int heif_image_handle_is_premultiplied_alpha(const struct heif_image_handle*);
+// not present in 1.11.0
+// int heif_image_handle_is_premultiplied_alpha(const struct heif_image_handle*);
 
 // Returns -1 on error, e.g. if this information is not present in the image.
 //LIBHEIF_API
