@@ -361,7 +361,8 @@ int heif_has_compatible_brand(const uint8_t* data, int len, const char* brand_fo
 struct heif_error heif_list_compatible_brands(const uint8_t* data, int len, heif_brand2** out_brands, int* out_size);
 
 //LIBHEIF_API
-void heif_free_list_of_compatible_brands(heif_brand2* brands_list);
+// not present in 1.11.0
+// void heif_free_list_of_compatible_brands(heif_brand2* brands_list);
 
 
 // Returns one of these MIME types:
