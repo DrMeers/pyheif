@@ -714,15 +714,17 @@ struct heif_error heif_image_handle_get_metadata(const struct heif_image_handle*
                                                  heif_item_id metadata_id,
                                                  void* out_data);
 
-/*
 enum heif_color_profile_type
 {
   heif_color_profile_type_not_present = 0,
-  heif_color_profile_type_nclx = heif_fourcc('n', 'c', 'l', 'x'),
-  heif_color_profile_type_rICC = heif_fourcc('r', 'I', 'C', 'C'),
-  heif_color_profile_type_prof = heif_fourcc('p', 'r', 'o', 'f')
+  // avoid using #define macro which seems to be unsupported by ffi
+  // heif_color_profile_type_nclx = heif_fourcc('n', 'c', 'l', 'x'),
+  heif_color_profile_type_nclx = (('n'<<24) | ('c'<<16) | ('l'<<8) | 'x'),
+  // heif_color_profile_type_rICC = heif_fourcc('r', 'I', 'C', 'C'),
+  heif_color_profile_type_rICC = (('r'<<24) | ('I'<<16) | ('C'<<8) | 'C'),
+  // heif_color_profile_type_prof = heif_fourcc('p', 'r', 'o', 'f')
+  heif_color_profile_type_prof = (('p'<<24) | ('r'<<16) | ('o'<<8) | 'f')
 };
-*/
 
 // Returns 'heif_color_profile_type_not_present' if there is no color profile.
 // If there is an ICC profile and an NCLX profile, the ICC profile is returned.
