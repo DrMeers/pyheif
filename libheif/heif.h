@@ -313,8 +313,7 @@ enum heif_filetype_result heif_check_filetype(const uint8_t* data, int len);
 // DEPRECATED, use heif_brand2 instead
 enum heif_brand
 {
-  // not present in 1.11.0:
-  // heif_unknown_brand,
+  heif_unknown_brand,
   heif_heic, // the usual HEIF images
   heif_heix, // 10bit images, or anything that uses h265 with range extension
   heif_hevc, heif_hevx, // brands for image sequences
